@@ -5,6 +5,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { styles } from "./styles";
 
+import Home from "./assets/icons/home.svg";
+import Search from "./assets/icons/search.svg";
+import Post from "./assets/icons/post.svg";
+import Profile from "./assets/icons/profile.svg";
+
 import { useFonts } from "expo-font";
 import { useEffect, useCallback } from "react";
 
@@ -51,11 +56,8 @@ export default function App() {
             name="Home"
             component={HomeScreen}
             options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require("./assets/boat.png")}
-                  style={{ width: 30, height: 30 }}
-                />
+              tabBarIcon: ({ focused, color, size }) => (
+                <Home width={size} height={size} fill={color} />
               ),
             }}
           />
@@ -63,36 +65,31 @@ export default function App() {
             name="Search"
             component={SearchScreen}
             options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require("./assets/boat.png")}
-                  style={{ width: 30, height: 30 }}
-                />
-              ),
+              tabBarIcon: ({ focused, color, size }) => {
+                return (
+                  <Search width={size} height={size} fill={color}></Search>
+                );
+              },
             }}
           />
           <Tab.Screen
             name="Post"
             component={PostScreen}
             options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require("./assets/boat.png")}
-                  style={{ width: 30, height: 30 }}
-                />
-              ),
+              tabBarIcon: ({ focused, color, size }) => {
+                return <Post width={size} height={size} fill={color}></Post>;
+              },
             }}
           />
           <Tab.Screen
             name="Profile"
             component={ProfileScreen}
             options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require("./assets/boat.png")}
-                  style={{ width: 30, height: 30 }}
-                />
-              ),
+              tabBarIcon: ({ focused, color, size }) => {
+                return (
+                  <Profile width={size} height={size} fill={color}></Profile>
+                );
+              },
             }}
           />
         </Tab.Navigator>
