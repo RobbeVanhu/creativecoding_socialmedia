@@ -16,6 +16,7 @@ import { useEffect, useCallback } from "react";
 import HomeScreen from "./screens/Home";
 import SearchScreen from "./screens/Search";
 import PostScreen from "./screens/Post";
+import RequestScreen from "./screens/Request";
 import ProfileScreen from "./screens/Profile";
 
 const Tab = createBottomTabNavigator();
@@ -75,6 +76,15 @@ export default function App() {
           <Tab.Screen
             name="Post"
             component={PostScreen}
+            options={{
+              tabBarIcon: ({ focused, color, size }) => {
+                return <Post width={size} height={size} fill={color}></Post>;
+              },
+            }}
+          />
+          <Tab.Screen
+            name="Request"
+            component={RequestScreen}
             options={{
               tabBarIcon: ({ focused, color, size }) => {
                 return <Post width={size} height={size} fill={color}></Post>;
