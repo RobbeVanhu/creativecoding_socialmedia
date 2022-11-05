@@ -1,13 +1,20 @@
-import { Text, View, Button } from "react-native";
+import { View, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+
 import ProfileHeader from "../../components/ProfileHeader";
+import ProfileChoice from "../../components/ProfileChoice";
+import ProfileFeed from "../../components/ProfileFeed";
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"></StatusBar>
-      <ProfileHeader />
+      <ScrollView>
+        <ProfileHeader />
+        <ProfileChoice />
+        <ProfileFeed />
+      </ScrollView>
     </View>
   );
 }
