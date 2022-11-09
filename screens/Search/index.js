@@ -1,12 +1,16 @@
-import { Text, View, Button } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+
+import SearchBarComp from "../../components/SearchBar";
 
 export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"></StatusBar>
-      <Text>Search pagina!</Text>
+      <ScrollView>
+        <SearchBarComp />
+      </ScrollView>
     </View>
   );
 }
