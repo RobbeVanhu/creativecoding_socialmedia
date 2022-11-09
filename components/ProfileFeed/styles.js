@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     fontFamily: "Montserrat-Regular",
     top: 70,
+    marginBottom: 100,
   },
   feedContainer: {
     left: 20,
