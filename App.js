@@ -4,6 +4,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { styles } from "./styles";
+import * as SplashScreen from "expo-splash-screen";
 
 import Home from "./assets/icons/home.svg";
 import Search from "./assets/icons/search.svg";

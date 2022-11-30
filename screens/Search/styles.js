@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform, StatusBar } from "react-native";
+import { defaultTopPadding } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,5 +7,8 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop:
+      defaultTopPadding +
+      (Platform.OS === "android" ? StatusBar.currentHeight : 0),
   },
 });
