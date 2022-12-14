@@ -12,8 +12,9 @@ import Post from "./assets/icons/post.svg";
 import Profile from "./assets/icons/profile.svg";
 
 import { useFonts } from "expo-font";
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 
+import LoginScreen from "./screens/Login";
 import HomeScreen from "./screens/Home";
 import SearchScreen from "./screens/Search";
 import PostScreen from "./screens/Post";
@@ -23,6 +24,7 @@ import ProfileScreen from "./screens/Profile";
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [isLoggedIn, setLoggedIn] = useState(false);
   const [fontsLoaded] = useFonts({
     "Montserrat-Bold": require("./assets/fonts/Montserrat-Bold.ttf"),
     "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf"),
@@ -45,66 +47,74 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
-
-  return (
-    <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Tab.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              tabBarIcon: ({ focused, color, size }) => (
-                <Home width={size} height={size} fill={color} />
-              ),
+  console.log(isLoggedIn);
+  if (isLoggedIn) {
+    return (
+      <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+        <NavigationContainer>
+          <Tab.Navigator
+            screenOptions={{
+              headerShown: false,
             }}
-          />
-          <Tab.Screen
-            name="Search"
-            component={SearchScreen}
-            options={{
-              tabBarIcon: ({ focused, color, size }) => {
-                return (
-                  <Search width={size} height={size} fill={color}></Search>
-                );
-              },
-            }}
-          />
-          <Tab.Screen
-            name="Post"
-            component={PostScreen}
-            options={{
-              tabBarIcon: ({ focused, color, size }) => {
-                return <Post width={size} height={size} fill={color}></Post>;
-              },
-            }}
-          />
-          <Tab.Screen
-            name="Request"
-            component={RequestScreen}
-            options={{
-              tabBarIcon: ({ focused, color, size }) => {
-                return <Post width={size} height={size} fill={color}></Post>;
-              },
-            }}
-          />
-          <Tab.Screen
-            name="Profile"
-            component={ProfileScreen}
-            options={{
-              tabBarIcon: ({ focused, color, size }) => {
-                return (
-                  <Profile width={size} height={size} fill={color}></Profile>
-                );
-              },
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </View>
-  );
+          >
+            <Tab.Screen
+              name="Home"
+              component={HomeScreen}
+              options={{
+                tabBarIcon: ({ focused, color, size }) => (
+                  <Home width={size} height={size} fill={color} />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Search"
+              component={SearchScreen}
+              options={{
+                tabBarIcon: ({ focused, color, size }) => {
+                  return (
+                    <Search width={size} height={size} fill={color}></Search>
+                  );
+                },
+              }}
+            />
+            <Tab.Screen
+              name="Post"
+              component={PostScreen}
+              options={{
+                tabBarIcon: ({ focused, color, size }) => {
+                  return <Post width={size} height={size} fill={color}></Post>;
+                },
+              }}
+            />
+            <Tab.Screen
+              name="Request"
+              component={RequestScreen}
+              options={{
+                tabBarIcon: ({ focused, color, size }) => {
+                  return <Post width={size} height={size} fill={color}></Post>;
+                },
+              }}
+            />
+            <Tab.Screen
+              name="Profile"
+              component={ProfileScreen}
+              options={{
+                tabBarIcon: ({ focused, color, size }) => {
+                  return (
+                    <Profile width={size} height={size} fill={color}></Profile>
+                  );
+                },
+              }}
+            />
+          </Tab.Navigator>
+        </NavigationContainer>
+      </View>
+    );
+  } else {
+    return (
+      <View onLayout={onLayoutRootView} style={{ flex: 1 }}>
+        <LoginScreen setLoggedIn={setLoggedIn} />
+      </View>
+    );
+  }
 }
