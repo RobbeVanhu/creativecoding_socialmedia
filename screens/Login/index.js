@@ -2,6 +2,8 @@ import React from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 import * as Expo from "expo";
 
+//code door wim
+
 export default class App extends React.Component {
   state = {
     username: "",
@@ -22,8 +24,8 @@ export default class App extends React.Component {
 
     try {
       let response = await fetch(
-        "http://172.16.140.175/codingproject/php/iets.php",
-        //"http://192.168.1.19/codingproject/php/iets.php",
+        //"http://172.16.140.175/codingproject/php/iets.php",
+        "http://192.168.1.19/codingproject/php/iets.php",
         {
           method: "POST",
           headers: {
