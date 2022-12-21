@@ -17,7 +17,7 @@ const EditFamily = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"></StatusBar>
-      <Text>Your user ID is: {getPerson()[0].users_email}</Text>
+      <Text>Your user ID is: {getPerson().users_username}</Text>
     </View>
   );
 };

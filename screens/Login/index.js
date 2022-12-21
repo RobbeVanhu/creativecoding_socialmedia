@@ -43,7 +43,7 @@ export default class App extends React.Component {
       let responseJson = await response.json();
       console.log(responseJson);
       if (responseJson.loggedin) {
-        setPerson(responseJson.users);
+        setPerson(responseJson);
         this.props.setLoggedIn(true, responseJson.users_username);
       } else {
         this.setState({ response: "tekst kwam niet overeen" });
