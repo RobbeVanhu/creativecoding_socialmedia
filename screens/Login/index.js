@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { setPerson } from "../../person";
 import * as Expo from "expo";
 
 //code door wim
@@ -9,6 +10,7 @@ export default class App extends React.Component {
     username: "",
     password: "",
     response: "",
+    users_username: "",
   };
 
   handleusers_usernameChange = (users_username) => {
@@ -24,8 +26,8 @@ export default class App extends React.Component {
 
     try {
       let response = await fetch(
-        //"http://172.16.140.175/codingproject/php/iets.php",
-        "http://192.168.1.19/codingproject/php/iets.php",
+        "http://172.16.140.175/codingproject/php/iets.php",
+        //"http://192.168.1.19/codingproject/php/iets.php",
         {
           method: "POST",
           headers: {
@@ -41,7 +43,8 @@ export default class App extends React.Component {
       let responseJson = await response.json();
       console.log(responseJson);
       if (responseJson.loggedin) {
-        this.props.setLoggedIn(true);
+        setPerson(responseJson.users);
+        this.props.setLoggedIn(true, responseJson.users_username);
       } else {
         this.setState({ response: "tekst kwam niet overeen" });
       }

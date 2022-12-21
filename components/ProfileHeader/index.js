@@ -1,6 +1,7 @@
 import { Text, View, Image, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+import { getPerson } from "../../person";
 
 export default function ProfileHeader() {
   return (
@@ -12,7 +13,7 @@ export default function ProfileHeader() {
           source={require("../../assets/placeholder/profilepicture.png")}
         />
         <View style={styles.nameContainer}>
-          <Text style={styles.name}>*Robbe Vanhuele*</Text>
+          <Text style={styles.name}>{getPerson().users_username}</Text>
           <Text style={styles.location}>*Brasschaat*</Text>
         </View>
       </View>

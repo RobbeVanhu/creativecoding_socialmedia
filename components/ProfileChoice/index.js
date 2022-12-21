@@ -1,13 +1,16 @@
 import { Text, View, Image, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+import { getPerson } from "../../person";
 
 export default function ProfileChoice() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto"></StatusBar>
       <View style={styles.choiceContainer}>
-        <Text style={styles.choiceHeader}>The choice of *Robbe*</Text>
+        <Text style={styles.choiceHeader}>
+          The choice of {getPerson().users_username}
+        </Text>
         <ScrollView
           style={styles.choiceScroll}
           horizontal={true}
