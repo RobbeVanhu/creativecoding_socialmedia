@@ -1,7 +1,25 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { setPerson } from "../../person";
+import { Alert } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import * as Expo from "expo";
+
+function showAlert() {
+  Alert.alert(
+    "Functie niet beschikbaar",
+    "Deze functie is nog niet toegankelijk in onze app. Onze excuses voor het ongemak.",
+    [
+      {
+        text: "Cancel",
+        onPress: () => console.log("Cancel Pressed"),
+        style: "cancel",
+      },
+      { text: "OK", onPress: () => console.log("OK Pressed") },
+    ],
+    { cancelable: false }
+  );
+}
 
 //code door wim
 
@@ -57,21 +75,36 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
-          style={styles.input}
-          value={this.state.users_username}
-          onChangeText={this.handleusers_usernameChange}
-          placeholder="users_username"
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.users_password}
-          onChangeText={this.handleusers_passwordChange}
-          placeholder="users_password"
-          secureTextEntry
-        />
-        <Button title="Login" onPress={this.handleLoginPress} />
-        <Text>{this.state.response}</Text>
+        <StatusBar style="light" backgroundColor="#252525" />
+        <Text style={styles.title}>Login</Text>
+        <View style={styles.form}>
+          <TextInput
+            placeholderTextColor="white"
+            style={styles.input}
+            value={this.state.users_username}
+            onChangeText={this.handleusers_usernameChange}
+            placeholder="Gebruikersnaam"
+          />
+          <TextInput
+            placeholderTextColor="white"
+            style={styles.input}
+            value={this.state.users_password}
+            onChangeText={this.handleusers_passwordChange}
+            placeholder="Wachtwoord"
+            secureTextEntry
+          />
+          <Text style={styles.forgot} onPress={showAlert}>
+            Forgot password?
+          </Text>
+          <Pressable style={styles.button} onPress={this.handleLoginPress}>
+            <Text style={styles.button_text}>Login</Text>
+          </Pressable>
+          <Text>{this.state.response}</Text>
+        </View>
+        <View style={styles.register}>
+          <Text style={styles.register_text}>Have not acount yet?</Text>
+          <Text style={styles.register_text_bold}>Sign up</Text>
+        </View>
       </View>
     );
   }
@@ -80,16 +113,59 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
-    justifyContent: "center",
+    marginTop: 0,
+    paddingTop: 100,
+    backgroundColor: "#252525",
+
+    //justifyContent: "center",
+  },
+  statusbar: {
+    backgroundColor: "yellow",
+  },
+  title: {
+    fontSize: 45,
+    marginBottom: 40,
+    color: "white",
   },
   input: {
-    width: 200,
+    width: 250,
     height: 44,
     padding: 10,
-    borderWidth: 1,
-    borderColor: "black",
     marginBottom: 10,
+    borderBottomColor: "#F4F4F4",
+    borderBottomWidth: 1,
+    placeholderTextColor: "white",
+    color: "yellow",
+  },
+  forgot: {
+    textAlign: "right",
+    color: "#CDCDCD",
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: "#FFE236",
+    paddingTop: 5,
+    paddingBottom: 5,
+    marginTop: 10,
+  },
+  button_text: {
+    color: "black",
+    textAlign: "center",
+    fontSize: 15,
+    textTransform: "uppercase",
+  },
+  register: {
+    marginTop: 50,
+  },
+  register_text: {
+    textAlign: "center",
+    color: "white",
+  },
+  register_text_bold: {
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 17,
+    color: "#FFE236",
   },
 });

@@ -9,3 +9,6 @@ export const borderRadius = 10;
 export const interestsWidth = 150;
 export const interestsHeight = 150;
 export const interestsRadius = 4;
+
+/*Colors*/
+export const geel = "#FFE236";
