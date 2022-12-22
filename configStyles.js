@@ -11,4 +11,9 @@ export const interestsHeight = 150;
 export const interestsRadius = 4;
 
 /*Colors*/
-export const geel = "#FFE236";
+export const COLORS = {
+  white: "#ffffff",
+  yellow: "#FFE236",
+  darkmodeblack: "#252525",
+  grey: "#CDCDCD",
+};

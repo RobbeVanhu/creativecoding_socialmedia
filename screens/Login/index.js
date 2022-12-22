@@ -4,6 +4,7 @@ import { setPerson } from "../../person";
 import { Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import * as Expo from "expo";
+import { COLORS } from "../../configStyles";
 
 function showAlert() {
   Alert.alert(
@@ -44,8 +45,8 @@ export default class App extends React.Component {
 
     try {
       let response = await fetch(
-        "http://172.16.140.175/codingproject/php/iets.php",
-        //"http://192.168.1.19/codingproject/php/iets.php",
+        //"http://172.16.140.175/codingproject/php/iets.php",
+        "http://192.168.1.19/codingproject/php/iets.php",
         {
           method: "POST",
           headers: {
@@ -116,17 +117,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 0,
     paddingTop: 100,
-    backgroundColor: "#252525",
+    backgroundColor: COLORS.darkmodeblack,
 
     //justifyContent: "center",
-  },
-  statusbar: {
-    backgroundColor: "yellow",
   },
   title: {
     fontSize: 45,
     marginBottom: 40,
-    color: "white",
+    color: COLORS.white,
   },
   input: {
     width: 250,
@@ -136,15 +134,15 @@ const styles = StyleSheet.create({
     borderBottomColor: "#F4F4F4",
     borderBottomWidth: 1,
     placeholderTextColor: "white",
-    color: "yellow",
+    color: COLORS.yellow,
   },
   forgot: {
     textAlign: "right",
-    color: "#CDCDCD",
+    color: COLORS.grey,
     marginBottom: 10,
   },
   button: {
-    backgroundColor: "#FFE236",
+    backgroundColor: COLORS.yellow,
     paddingTop: 5,
     paddingBottom: 5,
     marginTop: 10,
@@ -166,6 +164,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     fontSize: 17,
-    color: "#FFE236",
+    color: COLORS.yellow,
   },
 });
