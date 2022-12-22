@@ -14,7 +14,7 @@ export default function ProfileHeader() {
         />
         <View style={styles.nameContainer}>
           <Text style={styles.name}>{getPerson().users_username}</Text>
-          <Text style={styles.location}>*Brasschaat*</Text>
+          <Text style={styles.location}>test {getPerson().users_location}</Text>
         </View>
       </View>
     </View>

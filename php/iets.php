@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $query);
             if ($row['users_username'] === $data["users_username"] && $row['users_password'] === $data["users_password"]) {
                 $_SESSION['users_username'] = $row['users_username'];
                 $_SESSION['users_ID'] = $row['users_ID'];
-                echo json_encode(array("loggedin"=>true, "users_ID"=>$row['users_ID'], "users_username"=>$row['users_username']));
+                echo json_encode(array("loggedin"=>true, "users_ID"=>$row['users_ID'], "users_username"=>$row['users_username'], "users_email"=>$row['users_email'], "users_password"=>$row['users_password'], "users_location"=>$row['users_location'], "users_profile_image"=>$row['users_profile_image']));
 
                 //exit();
 

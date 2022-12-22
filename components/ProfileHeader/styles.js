@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-Bold",
   },
   location: {
-    color: "#949494",
+    color: "#ff25ff",
     fontFamily: "Montserrat-Light",
   },
 });
