@@ -1,32 +1,36 @@
 import { StyleSheet } from "react-native";
+import { Colors } from "react-native-paper";
+import { COLORS } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   container: {
+    backgroundColor: COLORS.darkmodeblack,
     flex: 1,
-    width: "100%",
     fontFamily: "Montserrat-Regular",
-    maxHeight: 200,
-  },
-  nameContainer: {
-    justifyContent: "flex-end",
-    top: 0,
-    left: 30,
   },
   profilePicture: {
     width: 100,
     height: 100,
     borderRadius: 100 / 2,
-    top: 30,
-    left: 20,
+    marginTop: 25,
+    left: 30,
     justifyContent: "flex-start",
+    paddingBottom: 90,
+  },
+  nameContainer: {
+    justifyContent: "flex-end",
+    left: 50,
+    justifyContent: "center",
+    top: 10,
   },
   name: {
     fontSize: 20,
     textAlign: "left",
     fontFamily: "Montserrat-Bold",
+    color: COLORS.yellow,
   },
   location: {
-    color: "#ff25ff",
+    color: COLORS.yellow,
     fontFamily: "Montserrat-Light",
   },
 });

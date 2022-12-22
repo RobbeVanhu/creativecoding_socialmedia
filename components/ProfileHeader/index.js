@@ -6,7 +6,7 @@ import { getPerson } from "../../person";
 export default function ProfileHeader() {
   return (
     <View style={styles.container}>
-      <StatusBar style="auto"></StatusBar>
+      <StatusBar style="light" backgroundColor="#252525"></StatusBar>
       <View style={{ flexDirection: "row" }}>
         <Image
           style={styles.profilePicture}
@@ -14,7 +14,7 @@ export default function ProfileHeader() {
         />
         <View style={styles.nameContainer}>
           <Text style={styles.name}>{getPerson().users_username}</Text>
-          <Text style={styles.location}>test {getPerson().users_location}</Text>
+          <Text style={styles.location}>{getPerson().users_location}</Text>
         </View>
       </View>
     </View>

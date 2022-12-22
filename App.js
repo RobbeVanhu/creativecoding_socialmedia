@@ -1,10 +1,12 @@
 //import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { View } from "react-native";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { styles } from "./styles";
 import * as SplashScreen from "expo-splash-screen";
+
+import { COLORS } from "./configStyles";
 
 import Home from "./assets/icons/home.svg";
 import Search from "./assets/icons/search.svg";
@@ -55,6 +57,15 @@ export default function App() {
           <Tab.Navigator
             screenOptions={{
               headerShown: false,
+              tabBarActiveTintColor: "#FFE236",
+              tabBarInactiveTintColor: "#ffffff",
+              tabBarStyle: [
+                {
+                  display: "flex",
+                  backgroundColor: "#252525",
+                },
+                null,
+              ],
             }}
           >
             <Tab.Screen
