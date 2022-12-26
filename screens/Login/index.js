@@ -3,21 +3,16 @@ import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { setPerson } from "../../person";
 import { Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import * as Expo from "expo";
 import { COLORS } from "../../configStyles";
+
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 function showAlert() {
   Alert.alert(
     "Functie niet beschikbaar",
     "Deze functie is nog niet toegankelijk in onze app. Onze excuses voor het ongemak.",
-    [
-      {
-        text: "Cancel",
-        onPress: () => console.log("Cancel Pressed"),
-        style: "cancel",
-      },
-      { text: "OK", onPress: () => console.log("OK Pressed") },
-    ],
+    [{ text: "OK", onPress: () => console.log("OK Pressed") }],
     { cancelable: false }
   );
 }
@@ -104,7 +99,9 @@ export default class App extends React.Component {
         </View>
         <View style={styles.register}>
           <Text style={styles.register_text}>Have not acount yet?</Text>
-          <Text style={styles.register_text_bold}>Sign up</Text>
+          <Pressable>
+            <Text style={styles.register_text_bold}>Sign up</Text>
+          </Pressable>
         </View>
       </View>
     );

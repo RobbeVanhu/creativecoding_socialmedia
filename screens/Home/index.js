@@ -16,7 +16,7 @@ import { getPerson } from "../../person";
 const EditFamily = () => {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" backgroundColor="#252525"></StatusBar>
+      <StatusBar backgroundColor="#252525" barStyle="dark-content"></StatusBar>
       <Text>Your user ID is: {getPerson().users_username}</Text>
     </View>
   );
