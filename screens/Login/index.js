@@ -1,12 +1,16 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Pressable,
+  TouchableOpacity,
+} from "react-native";
 import { setPerson } from "../../person";
 import { Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { COLORS } from "../../configStyles";
-
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 function showAlert() {
   Alert.alert(
@@ -99,9 +103,9 @@ export default class App extends React.Component {
         </View>
         <View style={styles.register}>
           <Text style={styles.register_text}>Have not acount yet?</Text>
-          <Pressable>
+          <TouchableOpacity>
             <Text style={styles.register_text_bold}>Sign up</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     );

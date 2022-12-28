@@ -1,12 +1,16 @@
-import { Text, View, Button } from "react-native";
+import { Text, View, Button, TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Home({ navigation }) {
+const Knop = () => {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto"></StatusBar>
-      <Text>Post pagina!</Text>
-    </View>
+    <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+      <Text style={styles.test}>Ga naar andere pagina</Text>
+    </TouchableOpacity>
   );
-}
+};
+
+export default Knop;
