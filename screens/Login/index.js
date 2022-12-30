@@ -1,24 +1,15 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Pressable,
-  TouchableOpacity,
-  Button,
-} from "react-native";
+import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { setPerson } from "../../person";
 import { Alert } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { COLORS } from "../../configStyles";
 
 import Register from "../../components/Register";
 
 function showAlert() {
   Alert.alert(
-    "Functie niet beschikbaar",
-    "Deze functie is nog niet toegankelijk in onze app. Onze excuses voor het ongemak.",
+    "Feature not available",
+    "This feature is not yet accessible in our app. We apologize for the inconvenience.",
     [{ text: "OK", onPress: () => console.log("OK Pressed") }],
     { cancelable: false }
   );
@@ -75,7 +66,7 @@ export default class App extends React.Component {
         setPerson(responseJson);
         this.props.setLoggedIn(true, responseJson.users_username);
       } else {
-        this.setState({ response: "tekst kwam niet overeen" });
+        this.setState({ response: "Username or password is incorrect" });
       }
       //this.setState({ response: responseJson.message });
     } catch (error) {
@@ -91,8 +82,12 @@ export default class App extends React.Component {
             <Text>
               <Register setShowComponent={this.setShowComponent} />
             </Text>
-            <Pressable onPress={this.handlePress}>
-              <Text>Login</Text>
+            <Text style={styles.register_text}>Already an account?</Text>
+            <Pressable
+              style={styles.button_register}
+              onPress={this.handlePress}
+            >
+              <Text style={styles.button_text_register}>Login</Text>
             </Pressable>
           </View>
         ) : (
@@ -104,14 +99,14 @@ export default class App extends React.Component {
                 style={styles.input}
                 value={this.state.users_username}
                 onChangeText={this.handleusers_usernameChange}
-                placeholder="Gebruikersnaam"
+                placeholder="Username"
               />
               <TextInput
                 placeholderTextColor="white"
                 style={styles.input}
                 value={this.state.users_password}
                 onChangeText={this.handleusers_passwordChange}
-                placeholder="Wachtwoord"
+                placeholder="Password"
                 secureTextEntry
               />
               <Text style={styles.forgot} onPress={showAlert}>
@@ -120,7 +115,9 @@ export default class App extends React.Component {
               <Pressable style={styles.button} onPress={this.handleLoginPress}>
                 <Text style={styles.button_text}>Login</Text>
               </Pressable>
-              <Text style={styles.register_text}>Have not acount yet?</Text>
+              <Text style={styles.register_text}>
+                Don't have an account yet?
+              </Text>
               <Pressable
                 style={styles.button_register}
                 onPress={this.handlePress}
@@ -158,7 +155,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderBottomColor: "#F4F4F4",
     borderBottomWidth: 1,
-    placeholderTextColor: "white",
+    placeholderTextColor: "green",
     color: COLORS.yellow,
   },
   forgot: {

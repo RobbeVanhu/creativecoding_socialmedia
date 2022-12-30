@@ -26,8 +26,10 @@ include("config.php");
             "SELECT users_username FROM socialmedia_users where users_username = '$getUsername'"
         );
     if (mysqli_num_rows($check_username) >= 1) {
-        echo json_encode(array("user with this username already exists"));
-        
+        echo json_encode(array("usernameExists" => true)); 
+    }
+    else if (empty($getUsername)){
+        echo json_encode(array("emptyField" => true));
     }
     else {
             $query = "INSERT INTO `socialmedia_users` (`users_ID`, `users_username`, `users_email`, `users_password`, `users_location`, `users_profile_image`, `users_image`) VALUES (NULL, '$getUsername', '$getEmail', '$getPassword', '$getLocation', '$getProfileimage', 0)";

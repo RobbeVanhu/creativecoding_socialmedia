@@ -1,15 +1,5 @@
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  Button,
-  Pressable,
-} from "react-native";
+import { View, TextInput, StyleSheet, Button } from "react-native";
 import React, { useState } from "react";
-import { COLORS } from "../../configStyles";
-
-import PasswordStrengthMeterBar from "react-native-password-strength-meter-bar";
 
 export default function Register({ setShowComponent }) {
   const [username, setUsername] = useState("");
@@ -38,58 +28,46 @@ export default function Register({ setShowComponent }) {
     let responseJson = await response.json();
     console.log(responseJson);
     if (responseJson.registered) {
-      console.log("Successfully register! Thank you for joining us");
+      console.log("User is registered");
       setShowComponent(false);
-    } else if (responseJson.usernameExists) {
-      alert("A user with this username already exists");
-    } else if (responseJson.emptyField) {
-      alert("Did you forget a field? Please check. We need all your data.");
+    } else {
+      alert("user with this username already exists");
     }
   };
   return (
     <View>
-      <Text style={styles.title}>Sign Up</Text>
       <TextInput
-        placeholderTextColor="white"
         style={styles.input}
         value={username}
         onChangeText={(text) => setUsername(text)}
-        placeholder="Username"
+        placeholder="username"
       />
       <TextInput
-        placeholderTextColor="white"
         style={styles.input}
         value={email}
-        keyboardType="email-address"
         onChangeText={(text) => setEmail(text)}
-        placeholder="E-mail"
+        placeholder="email"
       />
       <TextInput
-        placeholderTextColor="white"
         style={styles.input}
         value={password}
         secureTextEntry={true}
         onChangeText={(text) => setPassword(text)}
-        placeholder="Password"
+        placeholder="password"
       />
-      <PasswordStrengthMeterBar password={password} />
       <TextInput
-        placeholderTextColor="white"
         style={styles.input}
         value={location}
         onChangeText={(text) => setLocation(text)}
-        placeholder="Location"
+        placeholder="location"
       />
       <TextInput
-        placeholderTextColor="white"
         style={styles.input}
         value={profileimage}
         onChangeText={(text) => setProfileimage(text)}
-        placeholder="Profile image"
+        placeholder="profileimage"
       />
-      <Pressable style={styles.button} onPress={handleSubmit}>
-        <Text style={styles.button_text}>Register</Text>
-      </Pressable>
+      <Button title="Register" onPress={handleSubmit} />
     </View>
   );
 }
@@ -97,37 +75,16 @@ export default function Register({ setShowComponent }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
     alignItems: "center",
-    marginTop: 0,
-    paddingTop: 100,
-    backgroundColor: COLORS.darkmodeblack,
-  },
-  title: {
-    fontSize: 45,
-    marginBottom: 40,
-    color: COLORS.white,
-    textAlign: "center",
+    justifyContent: "center",
   },
   input: {
-    width: 250,
+    width: 200,
     height: 44,
     padding: 10,
+    borderWidth: 1,
+    borderColor: "black",
     marginBottom: 10,
-    borderBottomColor: "#F4F4F4",
-    borderBottomWidth: 1,
-    placeholderTextColor: "green",
-    color: COLORS.yellow,
-  },
-  button: {
-    backgroundColor: COLORS.yellow,
-    paddingTop: 5,
-    paddingBottom: 5,
-    marginTop: 10,
-  },
-  button_text: {
-    color: "black",
-    textAlign: "center",
-    fontSize: 15,
-    textTransform: "uppercase",
   },
 });
