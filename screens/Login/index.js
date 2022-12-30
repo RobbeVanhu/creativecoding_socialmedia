@@ -38,6 +38,9 @@ export default class App extends React.Component {
   handlePress = () => {
     this.setState((state) => ({ showComponent: !state.showComponent }));
   };
+  setShowComponent = (showComponent) => {
+    this.setState({ showComponent });
+  };
 
   handleusers_usernameChange = (users_username) => {
     this.setState({ users_username });
@@ -86,7 +89,7 @@ export default class App extends React.Component {
         {this.state.showComponent ? (
           <View>
             <Text>
-              <Register />
+              <Register setShowComponent={this.setShowComponent} />
             </Text>
             <Pressable onPress={this.handlePress}>
               <Text>Login</Text>
@@ -117,8 +120,12 @@ export default class App extends React.Component {
               <Pressable style={styles.button} onPress={this.handleLoginPress}>
                 <Text style={styles.button_text}>Login</Text>
               </Pressable>
-              <Pressable onPress={this.handlePress}>
-                <Text>Register</Text>
+              <Text style={styles.register_text}>Have not acount yet?</Text>
+              <Pressable
+                style={styles.button_register}
+                onPress={this.handlePress}
+              >
+                <Text style={styles.button_text_register}>Sign Up</Text>
               </Pressable>
               <Text>{this.state.response}</Text>
             </View>
@@ -171,17 +178,27 @@ const styles = StyleSheet.create({
     fontSize: 15,
     textTransform: "uppercase",
   },
+  button_register: {
+    paddingTop: 5,
+    paddingBottom: 5,
+    marginTop: 10,
+  },
+  button_text_register: {
+    color: "black",
+    textAlign: "center",
+    fontSize: 15,
+    textTransform: "uppercase",
+    textAlign: "center",
+    fontWeight: "bold",
+    color: COLORS.yellow,
+  },
   register: {
     marginTop: 50,
   },
   register_text: {
     textAlign: "center",
     color: "white",
-  },
-  register_text_bold: {
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 17,
-    color: COLORS.yellow,
+    marginTop: 50,
+    fontSize: 12,
   },
 });

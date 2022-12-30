@@ -1,68 +1,74 @@
-import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  Pressable,
-  TouchableOpacity,
-} from "react-native";
+import { View, TextInput, StyleSheet, Button } from "react-native";
+import React, { useState } from "react";
 
-export default class Register extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      response: "",
-      users_ID: "",
-      fullname: "",
-    };
-    this.handleusers_usernameChange =
-      this.handleusers_usernameChange.bind(this);
-    this.handleusers_passwordChange =
-      this.handleusers_passwordChange.bind(this);
-    this.handleusers_fullnameChange =
-      this.handleusers_fullnameChange.bind(this);
-  }
+export default function Register({ setShowComponent }) {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
+  const [profileimage, setProfileimage] = useState("");
 
-  handleusers_usernameChange(users_username) {
-    this.setState({ users_username });
-  }
-
-  handleusers_passwordChange(users_password) {
-    this.setState({ users_password });
-  }
-  handleusers_fullnameChange(users_fullname) {
-    this.setState({ users_fullname });
-  }
-
-  render() {
-    return (
-      <View>
-        <TextInput
-          style={styles.input}
-          value={this.state.users_username}
-          onChangeText={this.handleusers_usernameChange}
-          placeholder="username"
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.users_fullname}
-          onChangeText={this.handleusers_fullnameChange}
-          placeholder="full name"
-        />
-        <TextInput
-          style={styles.input}
-          value={this.state.users_password}
-          onChangeText={this.handleusers_passwordChange}
-          placeholder="password"
-        />
-        <Button title="Register" /*onPress={this.handleLoginPress}*/ />
-      </View>
+  const handleSubmit = async () => {
+    let response = await fetch(
+      "http://192.168.1.19/codingproject/php/register.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+          location,
+          profileimage,
+        }),
+      }
     );
-  }
+    let responseJson = await response.json();
+    console.log(responseJson);
+    if (responseJson.registered) {
+      console.log("User is registered");
+      setShowComponent(false);
+    } else {
+      alert("user with this username already exists");
+    }
+  };
+  return (
+    <View>
+      <TextInput
+        style={styles.input}
+        value={username}
+        onChangeText={(text) => setUsername(text)}
+        placeholder="username"
+      />
+      <TextInput
+        style={styles.input}
+        value={email}
+        onChangeText={(text) => setEmail(text)}
+        placeholder="email"
+      />
+      <TextInput
+        style={styles.input}
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+        placeholder="password"
+      />
+      <TextInput
+        style={styles.input}
+        value={location}
+        onChangeText={(text) => setLocation(text)}
+        placeholder="location"
+      />
+      <TextInput
+        style={styles.input}
+        value={profileimage}
+        onChangeText={(text) => setProfileimage(text)}
+        placeholder="profileimage"
+      />
+      <Button title="Register" onPress={handleSubmit} />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
