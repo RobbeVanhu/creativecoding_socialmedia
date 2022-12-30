@@ -6,14 +6,11 @@ import {
   TextInput,
   Pressable,
   TouchableOpacity,
-  Button,
 } from "react-native";
 import { setPerson } from "../../person";
 import { Alert } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { COLORS } from "../../configStyles";
-
-import Register from "../../components/Register";
 
 function showAlert() {
   Alert.alert(
@@ -32,11 +29,6 @@ export default class App extends React.Component {
     password: "",
     response: "",
     users_username: "",
-    showComponent: false,
-  };
-
-  handlePress = () => {
-    this.setState((state) => ({ showComponent: !state.showComponent }));
   };
 
   handleusers_usernameChange = (users_username) => {
@@ -83,47 +75,38 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {this.state.showComponent ? (
-          <View>
-            <Text>
-              <Register />
-            </Text>
-            <Pressable onPress={this.handlePress}>
-              <Text>Login</Text>
-            </Pressable>
-          </View>
-        ) : (
-          <View style={styles.container}>
-            <Text style={styles.title}>Login</Text>
-            <View style={styles.form}>
-              <TextInput
-                placeholderTextColor="white"
-                style={styles.input}
-                value={this.state.users_username}
-                onChangeText={this.handleusers_usernameChange}
-                placeholder="Gebruikersnaam"
-              />
-              <TextInput
-                placeholderTextColor="white"
-                style={styles.input}
-                value={this.state.users_password}
-                onChangeText={this.handleusers_passwordChange}
-                placeholder="Wachtwoord"
-                secureTextEntry
-              />
-              <Text style={styles.forgot} onPress={showAlert}>
-                Forgot password?
-              </Text>
-              <Pressable style={styles.button} onPress={this.handleLoginPress}>
-                <Text style={styles.button_text}>Login</Text>
-              </Pressable>
-              <Pressable onPress={this.handlePress}>
-                <Text>Register</Text>
-              </Pressable>
-              <Text>{this.state.response}</Text>
-            </View>
-          </View>
-        )}
+        <StatusBar style="light" backgroundColor="#252525" />
+        <Text style={styles.title}>Login</Text>
+        <View style={styles.form}>
+          <TextInput
+            placeholderTextColor="white"
+            style={styles.input}
+            value={this.state.users_username}
+            onChangeText={this.handleusers_usernameChange}
+            placeholder="Gebruikersnaam"
+          />
+          <TextInput
+            placeholderTextColor="white"
+            style={styles.input}
+            value={this.state.users_password}
+            onChangeText={this.handleusers_passwordChange}
+            placeholder="Wachtwoord"
+            secureTextEntry
+          />
+          <Text style={styles.forgot} onPress={showAlert}>
+            Forgot password?
+          </Text>
+          <Pressable style={styles.button} onPress={this.handleLoginPress}>
+            <Text style={styles.button_text}>Login</Text>
+          </Pressable>
+          <Text>{this.state.response}</Text>
+        </View>
+        <View style={styles.register}>
+          <Text style={styles.register_text}>Have not acount yet?</Text>
+          <TouchableOpacity>
+            <Text style={styles.register_text_bold}>Sign up</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
