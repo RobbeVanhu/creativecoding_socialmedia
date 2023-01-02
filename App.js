@@ -10,8 +10,9 @@ import { COLORS } from "./configStyles";
 
 import Home from "./assets/icons/home.svg";
 import Search from "./assets/icons/search.svg";
-import Post from "./assets/icons/post.svg";
-import Profile from "./assets/icons/profile.svg";
+import Post from "./assets/icons/upload.svg";
+import Profile from "./assets/icons/user.svg";
+import Request from "./assets/icons/requests.svg";
 
 import { useFonts } from "expo-font";
 import { useEffect, useCallback, useState } from "react";
@@ -101,7 +102,9 @@ export default function App() {
               component={RequestScreen}
               options={{
                 tabBarIcon: ({ focused, color, size }) => {
-                  return <Post width={size} height={size} fill={color}></Post>;
+                  return (
+                    <Request width={size} height={size} fill={color}></Request>
+                  );
                 },
               }}
             />
