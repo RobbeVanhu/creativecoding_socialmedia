@@ -6,7 +6,6 @@ import { getPerson } from "../../person";
 export default function ProfileFeed() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" backgroundColor="#252525"></StatusBar>
       <View style={styles.feedContainer}>
         <Text style={styles.feedHeader}>{getPerson().users_username} feed</Text>
         <View style={styles.containerSquare}>

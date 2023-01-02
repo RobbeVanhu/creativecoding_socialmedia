@@ -6,7 +6,6 @@ import { getPerson } from "../../person";
 export default function ProfileChoice() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" backgroundColor="#252525"></StatusBar>
       <View style={styles.choiceContainer}>
         <Text style={styles.choiceHeader}>
           The choice of {getPerson().users_username}

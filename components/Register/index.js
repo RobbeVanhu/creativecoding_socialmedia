@@ -11,6 +11,8 @@ import { COLORS } from "../../configStyles";
 
 import PasswordStrengthMeterBar from "react-native-password-strength-meter-bar";
 
+import ImagePicker from "react-native-image-picker";
+
 export default function Register({ setShowComponent }) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -50,14 +52,14 @@ export default function Register({ setShowComponent }) {
     <View>
       <Text style={styles.title}>Sign Up</Text>
       <TextInput
-        placeholderTextColor="white"
+        placeholderTextColor="#a7a7a7"
         style={styles.input}
         value={username}
         onChangeText={(text) => setUsername(text)}
         placeholder="Username"
       />
       <TextInput
-        placeholderTextColor="white"
+        placeholderTextColor="#a7a7a7"
         style={styles.input}
         value={email}
         keyboardType="email-address"
@@ -65,7 +67,7 @@ export default function Register({ setShowComponent }) {
         placeholder="E-mail"
       />
       <TextInput
-        placeholderTextColor="white"
+        placeholderTextColor="#a7a7a7"
         style={styles.input}
         value={password}
         secureTextEntry={true}
@@ -74,14 +76,14 @@ export default function Register({ setShowComponent }) {
       />
       <PasswordStrengthMeterBar password={password} />
       <TextInput
-        placeholderTextColor="white"
+        placeholderTextColor="#a7a7a7"
         style={styles.input}
         value={location}
         onChangeText={(text) => setLocation(text)}
         placeholder="Location"
       />
       <TextInput
-        placeholderTextColor="white"
+        placeholderTextColor="#a7a7a7"
         style={styles.input}
         value={profileimage}
         onChangeText={(text) => setProfileimage(text)}
@@ -100,7 +102,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 0,
     paddingTop: 100,
-    backgroundColor: COLORS.darkmodeblack,
   },
   title: {
     fontSize: 45,
@@ -116,16 +117,16 @@ const styles = StyleSheet.create({
     borderBottomColor: "#F4F4F4",
     borderBottomWidth: 1,
     placeholderTextColor: "green",
-    color: COLORS.yellow,
+    color: COLORS.primarycolor,
   },
   button: {
-    backgroundColor: COLORS.yellow,
+    backgroundColor: COLORS.primarycolor,
     paddingTop: 5,
     paddingBottom: 5,
     marginTop: 10,
   },
   button_text: {
-    color: "black",
+    color: COLORS.white,
     textAlign: "center",
     fontSize: 15,
     textTransform: "uppercase",

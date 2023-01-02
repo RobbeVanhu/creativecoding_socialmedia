@@ -4,7 +4,6 @@ import { COLORS } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.darkmodeblack,
     flex: 1,
     fontFamily: "Montserrat-Regular",
   },
@@ -27,10 +26,10 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: "left",
     fontFamily: "Montserrat-Bold",
-    color: COLORS.yellow,
+    color: COLORS.primarycolor,
   },
   location: {
-    color: COLORS.yellow,
+    color: COLORS.grey,
     fontFamily: "Montserrat-Light",
   },
 });

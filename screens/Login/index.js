@@ -79,9 +79,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         {this.state.showComponent ? (
           <View>
-            <Text>
-              <Register setShowComponent={this.setShowComponent} />
-            </Text>
+            <Register setShowComponent={this.setShowComponent} />
             <Text style={styles.register_text}>Already an account?</Text>
             <Pressable
               style={styles.button_register}
@@ -95,14 +93,14 @@ export default class App extends React.Component {
             <Text style={styles.title}>Login</Text>
             <View style={styles.form}>
               <TextInput
-                placeholderTextColor="white"
+                placeholderTextColor="#a7a7a7"
                 style={styles.input}
                 value={this.state.users_username}
                 onChangeText={this.handleusers_usernameChange}
                 placeholder="Username"
               />
               <TextInput
-                placeholderTextColor="white"
+                placeholderTextColor="#a7a7a7"
                 style={styles.input}
                 value={this.state.users_password}
                 onChangeText={this.handleusers_passwordChange}
@@ -139,14 +137,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 0,
     paddingTop: 100,
-    backgroundColor: COLORS.darkmodeblack,
-
-    //justifyContent: "center",
   },
   title: {
     fontSize: 45,
     marginBottom: 40,
-    color: COLORS.white,
+    color: COLORS.black,
   },
   input: {
     width: 250,
@@ -155,8 +150,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderBottomColor: "#F4F4F4",
     borderBottomWidth: 1,
-    placeholderTextColor: "green",
-    color: COLORS.yellow,
+    color: COLORS.primarycolor,
   },
   forgot: {
     textAlign: "right",
@@ -164,13 +158,13 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: COLORS.yellow,
+    backgroundColor: COLORS.primarycolor,
     paddingTop: 5,
     paddingBottom: 5,
     marginTop: 10,
   },
   button_text: {
-    color: "black",
+    color: COLORS.white,
     textAlign: "center",
     fontSize: 15,
     textTransform: "uppercase",
@@ -181,20 +175,19 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   button_text_register: {
-    color: "black",
     textAlign: "center",
     fontSize: 15,
     textTransform: "uppercase",
     textAlign: "center",
     fontWeight: "bold",
-    color: COLORS.yellow,
+    color: COLORS.primarycolor,
   },
   register: {
     marginTop: 50,
   },
   register_text: {
     textAlign: "center",
-    color: "white",
+    color: COLORS.grey,
     marginTop: 50,
     fontSize: 12,
   },

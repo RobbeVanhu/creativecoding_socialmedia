@@ -3,7 +3,6 @@ import { COLORS } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: COLORS.darkmodeblack,
     flex: 1,
     width: "100%",
     fontFamily: "Montserrat-Regular",
@@ -14,7 +13,7 @@ export const styles = StyleSheet.create({
     left: 20,
   },
   feedHeader: {
-    color: COLORS.yellow,
+    color: COLORS.primarycolor,
     fontSize: 20,
     fontFamily: "Montserrat-Bold",
   },

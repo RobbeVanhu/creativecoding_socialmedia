@@ -15,7 +15,6 @@ export default function ProfileHeader() {
     getPerson().users_profile_image;
   return (
     <View style={styles.container}>
-      <StatusBar style="light" backgroundColor="#252525"></StatusBar>
       <View style={{ flexDirection: "row" }}>
         <Image style={styles.profilePicture} source={{ uri: imageUrl }} />
         <View style={styles.nameContainer}>
