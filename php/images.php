@@ -21,7 +21,7 @@ $users_username = $data['users_username'];
 $users_password = $data['users_password'];
 
 
-$query="SELECT * FROM `socialmedia_images`, `socialmedia_users`  WHERE users_username='$users_username' AND users_password='$users_password' AND users_image=image_users_ID ";
+$query="SELECT * FROM `socialmedia_images`, `socialmedia_users` WHERE image_users_ID=users_ID ";
 
 $result = mysqli_query($conn, $query);
 
@@ -32,31 +32,13 @@ $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($result);
 
             if () {
-                echo json_encode(array("images"=>true, "image_ID"=>$row['image_ID'], "image_users_ID"=>$row['image_users_ID'], "image_post_date"=>$row['image_post_date'], "image_active"=>$row['image_active'], "image_favorite"=>$row['image_favorite'], "image_url"=>$row['image_url']));
-
-                
-                $json = json_decode($json_string);
-                $image_urls = array();
-                foreach ($json as $image) {
-                    $image_urls[] = $image->image_url;
-                }
-                $json->image_urls = $image_urls;
-                $json_string = json_encode($json);
-
-
-                
+                echo json_encode(array("images"=>true, "image_ID"=>$row['image_ID'], "image_users_ID"=>$row['image_users_ID'], "image_post_date"=>$row['image_post_date'], "image_active"=>$row['image_active'], "image_favorite"=>$row['image_favorite'], "image_url"=>$row['image_url']));              
 
             }
 
         } else {
-            echo json_encode(array("loggedin"=>false));
-            //header("Location: index.php?error=Incorect User name or password");
-
-            //exit();
-
+            echo json_encode(array("images"=>false));
         }
-
-
 
 //echo json_encode($result->fetch_all());
 

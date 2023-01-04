@@ -4,16 +4,9 @@ import { getPerson } from "../../person";
 import { getImages } from "../../images";
 
 export default function ProfileChoice() {
-  let result = getImages();
-  if (typeof result === "object") {
-    console.log("testObject");
-  }
-  if (result.hasOwnProperty("image_url")) {
-    console.log("testImages");
-  }
-
+  let test = getPerson().users_username;
   const imageUrl =
-    "http://192.168.1.19/codingproject/assets/placeholder/test.png";
+    "http://192.168.1.19/codingproject/assets/placeholder/" + test;
 
   if (getPerson().images.image_favorite == "1") {
     return (
