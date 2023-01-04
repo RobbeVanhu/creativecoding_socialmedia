@@ -1,11 +1,4 @@
-import {
-  Text,
-  View,
-  Image,
-  ScrollView,
-  resolveAssetSource,
-} from "react-native";
-import { StatusBar } from "expo-status-bar";
+import { Text, View, Image } from "react-native";
 import { styles } from "./styles";
 import { getPerson } from "../../person";
 

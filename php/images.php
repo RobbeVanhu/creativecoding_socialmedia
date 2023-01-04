@@ -31,12 +31,9 @@ $result = mysqli_query($conn, $query);
 
             $row = mysqli_fetch_assoc($result);
 
-            if ($row['users_username'] === $data["users_username"] && $row['users_password'] === $data["users_password"]) {
-                $_SESSION['users_username'] = $row['users_username'];
-                //$_SESSION['users_ID'] = $row['users_ID'];
-                echo json_encode(array("loggedin"=>true, "users_ID"=>$row['users_ID'], "users_username"=>$row['users_username'], "users_email"=>$row['users_email'], "users_password"=>$row['users_password'], "users_location"=>$row['users_location'], "users_profile_image"=>$row['users_profile_image'], "users_image"=>$row['users_image'], "image_ID"=>$row['image_ID'], "image_users_ID"=>$row['image_users_ID'], "image_post_date"=>$row['image_post_date'], "image_active"=>$row['image_active'], "image_favorite"=>$row['image_favorite'], "image_url"=>$row['image_url']));
+            if () {
+                echo json_encode(array("images"=>true, "image_ID"=>$row['image_ID'], "image_users_ID"=>$row['image_users_ID'], "image_post_date"=>$row['image_post_date'], "image_active"=>$row['image_active'], "image_favorite"=>$row['image_favorite'], "image_url"=>$row['image_url']));
 
-                exit();
                 
                 $json = json_decode($json_string);
                 $image_urls = array();

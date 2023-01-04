@@ -17,9 +17,9 @@ const EditFamily = () => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor="#252525" barStyle="dark-content"></StatusBar>
-      <Text>Your user ID is: {getPerson().users_username}</Text>
+      <Text>Your username is: {getPerson().users_username}</Text>
+      <Text>Your users_image is: {getPerson().users_image}</Text>
     </View>
   );
 };
-
 export default EditFamily;
