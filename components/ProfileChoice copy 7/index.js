@@ -2,6 +2,7 @@ import { Text, View, Image, ScrollView, FlatList } from "react-native";
 import { styles } from "./styles";
 import { getPerson } from "../../person";
 import { getImages } from "../../images";
+import React, { useState, useEffect } from "react";
 
 export default function ProfileChoice() {
   const images = getImages();
@@ -14,15 +15,23 @@ export default function ProfileChoice() {
     imageUrls.push(url);
   }
 
+  //console.log(imageUrls);
+
   function renderImages() {
     return imageUrls.map((imageUrl) => {
       return (
-        <View key={imageUrl}>
-          <Image style={styles.choiceImage} source={{ uri: imageUrl }} />
+        <View>
+          <Image
+            key={imageUrl}
+            style={styles.choiceImage}
+            source={{ uri: imageUrl }}
+          />
         </View>
       );
     });
   }
+
+  console.log(renderImages());
 
   return (
     <View style={styles.container}>
