@@ -6,6 +6,7 @@ import { getImages } from "../../images";
 export default function ProfileChoice() {
   const images = getImages();
   const imageUrls = [];
+  console.log(images);
 
   for (let i = 0; i < images.length; i++) {
     const url =

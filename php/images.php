@@ -15,29 +15,31 @@ include("config.php");
 
 session_start(); 
 
-$data = json_decode(file_get_contents('php://input'), true);
-
-$users_username = $data['users_username'];
-$users_password = $data['users_password'];
 
 
-$query="SELECT * FROM `socialmedia_images`, `socialmedia_users` WHERE image_users_ID=users_ID ";
+$query="SELECT * FROM `socialmedia_images`";
 
 $result = mysqli_query($conn, $query);
+$resultAll = mysqli_query($conn, $query);
+
+$rows = array();
+while ($row = mysqli_fetch_object($resultAll)) {
+    $rows[] = $row;
+}
 
 
 
-        if (mysqli_num_rows($result) === 1) {
+        sif (mysqli_num_rows($result) > 0) {
 
             $row = mysqli_fetch_assoc($result);
 
             if () {
-                echo json_encode(array("images"=>true, "image_ID"=>$row['image_ID'], "image_users_ID"=>$row['image_users_ID'], "image_post_date"=>$row['image_post_date'], "image_active"=>$row['image_active'], "image_favorite"=>$row['image_favorite'], "image_url"=>$row['image_url']));              
+                echo json_encode(array("allimages"=>true, "allimages"=>$rows[]));              
 
             }
 
         } else {
-            echo json_encode(array("images"=>false));
+            echo json_encode(array("allimages"=>false));
         }
 
 //echo json_encode($result->fetch_all());

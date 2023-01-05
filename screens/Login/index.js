@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
 import { setPerson } from "../../person";
 import { setImages } from "../../images";
+import { setAllimages } from "../../allimages";
 import { Alert } from "react-native";
 import { COLORS } from "../../configStyles";
 
@@ -66,6 +67,7 @@ export default class App extends React.Component {
       if (responseJson.loggedin) {
         setPerson(responseJson);
         setImages(responseJson.images);
+        setAllimages(responseJson.allimages);
         this.props.setLoggedIn(true, responseJson.users_username);
       } else {
         this.setState({ response: "Username or password is incorrect" });
