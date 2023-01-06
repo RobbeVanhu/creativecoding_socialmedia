@@ -9,12 +9,10 @@ export default function ProfileChoice() {
   console.log(images);
 
   for (let i = 0; i < images.length; i++) {
-    if (images[i].image_favorite === "1") {
-      const url =
-        "http://192.168.1.19/codingproject/assets/placeholder/" +
-        images[i].image_url;
-      imageUrls.push(url);
-    }
+    const url =
+      "http://192.168.1.19/codingproject/assets/placeholder/" +
+      images[i].image_url;
+    imageUrls.push(url);
   }
 
   function renderImages() {
