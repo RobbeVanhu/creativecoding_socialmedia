@@ -6,7 +6,7 @@ import { getPerson } from "../../person";
 import { getAllimages } from "../../allimages";
 
 export default function HomeScreen() {
-  const window = Dimensions.get("window");
+  //const window = Dimensions.get("window");
 
   const allimages = getAllimages();
   const imageUrls = [];
