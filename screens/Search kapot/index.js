@@ -33,10 +33,9 @@ export default function Search({ navigation }) {
 
   const onChangeSearch = (query) => {
     setSearchQuery(query);
-    const filtered = allUsernames.filter((username) =>
-      username.includes(query)
+    setFilteredUsernames(
+      visitedUsernames.filter((username) => username.includes(query))
     );
-    setFilteredUsernames(filtered);
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -48,20 +47,22 @@ export default function Search({ navigation }) {
           placeholder="Search"
           onChangeText={onChangeSearch}
           value={searchQuery}
+          onFocus={() => setSearchFocused(true)}
+          onBlur={() => setSearchFocused(false)}
         />
-        <SectionList
-          style={styles.sectionlist}
-          sections={[
-            {
-              data: filteredUsernames,
-            },
-          ]}
-          renderItem={({ item }) => (
-            <Text style={styles.sectionItem}>{item}</Text>
-          )}
-          renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
-          keyExtractor={(item) => item}
-        />
+        {searchFocused && (
+          <SectionList
+            style={styles.sectionlist}
+            sections={[
+              {
+                data: filteredUsernames,
+              },
+            ]}
+            renderItem={({ item }) => <Text>{item}</Text>}
+            renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
+            keyExtractor={(item) => item}
+          />
+        )}
         <ScrollView>
           <MusicButton />
           <SportButton />

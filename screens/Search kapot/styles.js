@@ -22,9 +22,6 @@ export const styles = StyleSheet.create({
   sectionlist: {
     height: 100,
     marginBottom: 20,
-  },
-  sectionItem: {
-    fontSize: 18,
-    fontWeight: "bold",
+    backgroundColor: "green",
   },
 });
