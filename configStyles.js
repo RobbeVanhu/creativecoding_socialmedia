@@ -1,5 +1,8 @@
+import { Dimensions } from "react-native";
+export const window = Dimensions.get("window");
+
 export const defaultHorizontalPadding = 35;
-export const defaultTopPadding = 20;
+export const defaultTopPadding = 35;
 
 /*SearchBar Style*/
 export const borderWidthSearchbar = 1;

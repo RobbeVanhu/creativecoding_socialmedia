@@ -10,7 +10,8 @@ export default function Home({ navigation }) {
   return (
     <View style={styles.container}>
       <SafeAreaView>
-        <StatusBar style="dark"></StatusBar>
+        <StatusBar></StatusBar>
+        <View style={styles.margintop}></View>
         <ScrollView>
           <ProfileHeader />
           <ProfileChoice />

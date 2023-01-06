@@ -17,7 +17,7 @@ session_start();
 
 
 
-$query="SELECT * FROM `socialmedia_images`";
+$query="SELECT * FROM `socialmedia_images`, `socialmedia_users` WHERE 'users_ID'='image_users_ID'";
 
 $result = mysqli_query($conn, $query);
 $resultAll = mysqli_query($conn, $query);

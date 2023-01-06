@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView } from "react-native";
+import { Text, View, Image, ScrollView, Dimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
 import React from "react";
@@ -6,6 +6,8 @@ import { getPerson } from "../../person";
 import { getAllimages } from "../../allimages";
 
 export default function HomeScreen() {
+  const window = Dimensions.get("window");
+
   const allimages = getAllimages();
   const imageUrls = [];
 
@@ -17,17 +19,25 @@ export default function HomeScreen() {
   }
 
   function renderImages() {
-    return imageUrls.map((imageUrl) => {
+    return imageUrls.map((imageUrl, index) => {
       return (
         <View key={imageUrl}>
-          <Image style={styles.choiceImage} source={{ uri: imageUrl }} />
+          <View style={{ flexDirection: "row" }}>
+            <Text style={styles.left_text}>
+              {allimages[index].users_username}
+            </Text>
+            <Text style={styles.right_text}>
+              {allimages[index].image_post_date}
+            </Text>
+          </View>
+          <Image style={styles.image} source={{ uri: imageUrl }} />
         </View>
       );
     });
   }
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="#252525" barStyle="dark-content"></StatusBar>
+      <StatusBar></StatusBar>
       <View style={styles.margintop}></View>
       <ScrollView
         style={styles.choiceScroll}

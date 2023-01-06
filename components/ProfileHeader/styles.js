@@ -7,11 +7,11 @@ export const styles = StyleSheet.create({
     flex: 1,
     fontFamily: "Montserrat-Regular",
   },
+
   profilePicture: {
     width: 100,
     height: 100,
     borderRadius: 100 / 2,
-    marginTop: 25,
     left: 30,
     justifyContent: "flex-start",
     paddingBottom: 90,

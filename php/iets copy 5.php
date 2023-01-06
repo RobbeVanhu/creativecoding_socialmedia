@@ -22,7 +22,7 @@ $users_password = $data['users_password'];
 
 
 $query="SELECT * FROM `socialmedia_users`, `socialmedia_images` WHERE `image_users_ID` = `users_ID` AND users_username='$users_username' AND users_password='$users_password'";
-$query2="SELECT * FROM `socialmedia_images`, `socialmedia_users` WHERE `image_users_ID` = `users_ID`";
+$query2="SELECT * FROM `socialmedia_images`";
 
 $result = mysqli_query($conn, $query);
 $resultAll = mysqli_query($conn, $query);

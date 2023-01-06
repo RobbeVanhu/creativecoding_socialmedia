@@ -9,4 +9,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     paddingTop: StatusBar.currentHeight,
   },
+  margintop: {
+    marginTop: 25,
+  },
 });
