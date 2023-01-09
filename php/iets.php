@@ -42,11 +42,7 @@ while ($row = mysqli_fetch_object($resultAll2)) {
 
             $row = mysqli_fetch_assoc($result);
             $row2 = mysqli_fetch_assoc($result);
-            /*
-            if () {
-                echo json_encode(array("allimages"=>true, "image_ID"=>$rows['image_ID'], "image_users_ID"=>$rows['image_users_ID'], "image_post_date"=>$rows['image_post_date'], "image_active"=>$rows['image_active'], "image_favorite"=>$rows['image_favorite'], "image_url"=>$rows['image_url'], "images"=>$rows2)); 
-            }
-            */
+
             if ($row['users_username'] === $data["users_username"] && $row['users_password'] === $data["users_password"]) {
                 $_SESSION['users_username'] = $row['users_username'];
                 //$_SESSION['users_ID'] = $row['users_ID'];
@@ -56,8 +52,4 @@ while ($row = mysqli_fetch_object($resultAll2)) {
         } else {
             echo json_encode(array("loggedin"=>false));
         }
-
-
-//echo json_encode($result->fetch_all());
-
 ?>

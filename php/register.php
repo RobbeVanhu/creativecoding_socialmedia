@@ -19,7 +19,6 @@ include("config.php");
     $getPassword = $data['password'];
     $getLocation = $data['location'];
     $getProfileimage = $data['profileimage'];
-  
 
         $check_username = mysqli_query(
             $conn,
@@ -36,7 +35,4 @@ include("config.php");
             $result = $conn->query($query);
             echo json_encode(array("registered" => true));
     }
-    
-    
-
   ?>

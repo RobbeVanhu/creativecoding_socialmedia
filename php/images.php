@@ -41,7 +41,4 @@ while ($row = mysqli_fetch_object($resultAll)) {
         } else {
             echo json_encode(array("allimages"=>false));
         }
-
-//echo json_encode($result->fetch_all());
-
 ?>
