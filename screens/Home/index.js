@@ -1,13 +1,10 @@
-import { Text, View, Image, ScrollView, Dimensions } from "react-native";
+import { Text, View, Image, ScrollView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
 import React from "react";
-import { getPerson } from "../../person";
 import { getAllimages } from "../../allimages";
 
 export default function HomeScreen() {
-  //const window = Dimensions.get("window");
-
   const allimages = getAllimages();
   const imageUrls = [];
 

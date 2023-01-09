@@ -11,15 +11,11 @@ import { styles } from "./styles";
 import { Searchbar } from "react-native-paper";
 import { getAllimages } from "../../allimages";
 
-import MusicButton from "../../components/Interest/MusicButton";
-import SportButton from "../../components/Interest/SportButton";
-
 export default function Search({ navigation }) {
   const [searchFocused, setSearchFocused] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredUsernames, setFilteredUsernames] = useState([]);
 
-  const allimages = getAllimages();
   let allUsernames = [];
   let visitedUsernames = {};
   for (let i = 0; i < getAllimages().length; i++) {
