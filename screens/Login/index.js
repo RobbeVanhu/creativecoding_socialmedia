@@ -1,10 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Pressable } from "react-native";
+import { Text, View, TextInput, Pressable } from "react-native";
 import { setPerson } from "../../person";
 import { setImages } from "../../images";
 import { setAllimages } from "../../allimages";
 import { Alert } from "react-native";
-import { COLORS } from "../../configStyles";
 import { styles } from "./styles";
 
 import Register from "../../components/Register";
@@ -49,7 +48,7 @@ export default class App extends React.Component {
 
     try {
       let response = await fetch(
-        "http://192.168.1.19/codingproject/php/iets.php",
+        "https://www.nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/php/iets.php",
         {
           method: "POST",
           headers: {

@@ -13,7 +13,7 @@ export default function Register({ setShowComponent }) {
 
   const handleSubmit = async () => {
     let response = await fetch(
-      "http://192.168.1.19/codingproject/php/register.php",
+      "https://nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/php/register.php",
       {
         method: "POST",
         headers: {

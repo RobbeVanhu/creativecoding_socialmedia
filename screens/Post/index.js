@@ -1,7 +1,6 @@
-import { Text, View, Button, Image, TouchableOpacity } from "react-native";
+import { View, Button, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
-import { useNavigation } from "@react-navigation/native";
 
 import React, { useState, useEffect } from "react";
 import * as ImagePicker from "expo-image-picker";

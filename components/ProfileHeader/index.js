@@ -4,7 +4,7 @@ import { getPerson } from "../../person";
 
 export default function ProfileHeader() {
   const imageUrl =
-    "http://192.168.1.19/codingproject/assets/profileimages/" +
+    "https://nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/assets/profileimages/" +
     getPerson().users_profile_image;
   return (
     <View style={styles.container}>

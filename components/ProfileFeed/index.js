@@ -9,7 +9,8 @@ export default function ProfileFeed() {
 
   for (let i = 0; i < images.length; i++) {
     const url =
-      "http://192.168.1.19/codingproject/assets/posts/" + images[i].image_url;
+      "https://nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/assets/posts/" +
+      images[i].image_url;
     imageUrls.push(url);
   }
 
