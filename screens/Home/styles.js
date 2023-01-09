@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { COLORS, defaultTopPadding } from "../../configStyles";
+import { COLORS } from "../../configStyles";
 
 const window = Dimensions.get("window");
 

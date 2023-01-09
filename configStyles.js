@@ -17,6 +17,7 @@ export const interestsRadius = 4;
 export const COLORS = {
   black: "#00000",
   primarycolor: "#30BCC9",
+  primarycolor_light: "#93f6ff",
   grey: "#a7a7a7",
   white: "#ffffff",
 };

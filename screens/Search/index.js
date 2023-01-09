@@ -11,7 +11,6 @@ import { styles } from "./styles";
 import { Searchbar } from "react-native-paper";
 import { getAllimages } from "../../allimages";
 
-import SearchBarComp from "../../components/SearchBar";
 import MusicButton from "../../components/Interest/MusicButton";
 import SportButton from "../../components/Interest/SportButton";
 
@@ -62,10 +61,6 @@ export default function Search({ navigation }) {
           renderSectionHeader={({ section }) => <Text>{section.title}</Text>}
           keyExtractor={(item) => item}
         />
-        <ScrollView>
-          <MusicButton />
-          <SportButton />
-        </ScrollView>
       </View>
     </SafeAreaView>
   );

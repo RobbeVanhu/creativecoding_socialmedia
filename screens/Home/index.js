@@ -13,7 +13,7 @@ export default function HomeScreen() {
 
   for (let i = 0; i < allimages.length; i++) {
     const url =
-      "http://192.168.1.19/codingproject/assets/placeholder/" +
+      "http://192.168.1.19/codingproject/assets/posts/" +
       allimages[i].image_url;
     imageUrls.push(url);
   }

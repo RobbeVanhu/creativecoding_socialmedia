@@ -10,8 +10,7 @@ export default function ProfileFeed() {
 
   for (let i = 0; i < images.length; i++) {
     const url =
-      "http://192.168.1.19/codingproject/assets/placeholder/" +
-      images[i].image_url;
+      "http://192.168.1.19/codingproject/assets/posts/" + images[i].image_url;
     imageUrls.push(url);
   }
 

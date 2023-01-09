@@ -4,6 +4,7 @@ import {
   borderWidthSearchbar,
   borderRadius,
 } from "../../configStyles";
+import { COLORS } from "../../configStyles";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -26,5 +27,6 @@ export const styles = StyleSheet.create({
   sectionItem: {
     fontSize: 18,
     fontWeight: "bold",
+    color: COLORS.primarycolor,
   },
 });

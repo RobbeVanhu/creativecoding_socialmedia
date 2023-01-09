@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   button: {
@@ -7,7 +8,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 5,
     borderRadius: 4,
-    backgroundColor: "black",
+    backgroundColor: COLORS.primarycolor_light,
     width: 120,
     marginRight: 10,
   },
@@ -15,6 +16,6 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 21,
     fontWeight: "bold",
-    color: "white",
+    color: "black",
   },
 });

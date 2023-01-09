@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { COLORS } from "../../configStyles";
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,7 +10,8 @@ export const styles = StyleSheet.create({
     minHeight: 150,
     marginTop: 5,
     marginBottom: 5,
-    backgroundColor: "#DCDEDE",
+    borderBottomColor: COLORS.primarycolor,
+    borderBottomWidth: 2,
   },
   nameContainer: {
     justifyContent: "flex-end",
@@ -29,6 +31,7 @@ export const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "Montserrat-Bold",
     marginTop: 25,
+    color: COLORS.primarycolor,
   },
   button: {
     alignItems: "center",
