@@ -1,4 +1,4 @@
-import { Text, View, Image, Button, Alert } from "react-native";
+import { Text, View, Image } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
 

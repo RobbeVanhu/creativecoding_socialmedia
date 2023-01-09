@@ -1,4 +1,4 @@
-import { Text, View, Image, ScrollView, FlatList } from "react-native";
+import { Text, View, Image, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { getPerson } from "../../person";
 import { getImages } from "../../images";

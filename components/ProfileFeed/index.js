@@ -1,5 +1,4 @@
 import { Text, View, Image } from "react-native";
-import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
 import { getPerson } from "../../person";
 import { getImages } from "../../images";
