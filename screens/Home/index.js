@@ -15,6 +15,11 @@ export default function HomeScreen() {
     imageUrls.push(url);
   }
 
+  // sorteer de array allimages op image_post_date
+  allimages.sort((a, b) => {
+    return new Date(b.image_post_date) - new Date(a.image_post_date);
+  });
+
   function renderImages() {
     return imageUrls.map((imageUrl, index) => {
       return (
