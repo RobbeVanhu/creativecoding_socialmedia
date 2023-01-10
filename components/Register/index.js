@@ -28,6 +28,8 @@ export default function Register({ setShowComponent }) {
         }),
       }
     );
+
+    //Extra console.log's toevoegen en laat ik ook staan = handig voor verder aan te werken om te zien of het lukt
     let responseJson = await response.json();
     console.log(responseJson);
     if (responseJson.registered) {
@@ -36,7 +38,9 @@ export default function Register({ setShowComponent }) {
     } else if (responseJson.usernameExists) {
       alert("A user with this username already exists");
     } else if (responseJson.emptyField) {
-      alert("Did you forget a field? Please check. We need all your data.");
+      alert(
+        "Did you forget a field? Please check. Please fill out all fields."
+      );
     }
   };
   return (

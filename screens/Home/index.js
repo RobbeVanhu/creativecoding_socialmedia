@@ -20,6 +20,7 @@ export default function HomeScreen() {
     return new Date(b.image_post_date) - new Date(a.image_post_date);
   });
 
+  // maak voor elke image een aparte 'post' aan en laat deze zien om de home page
   function renderImages() {
     return imageUrls.map((imageUrl, index) => {
       return (

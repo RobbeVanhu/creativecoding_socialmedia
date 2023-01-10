@@ -7,6 +7,7 @@ export default function ProfileFeed() {
   const images = getImages();
   const imageUrls = [];
 
+  // Alle urls maken voor images uit de database/map waarvan de rij image_favorite 1 is
   for (let i = 0; i < images.length; i++) {
     const url =
       "https://nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/assets/posts/" +
@@ -14,6 +15,7 @@ export default function ProfileFeed() {
     imageUrls.push(url);
   }
 
+  //Er voor zorgen dat voor alle images via bovenstaande url een afbeelding wordt weergegeven
   function renderImages() {
     return imageUrls.map((imageUrl) => {
       return (

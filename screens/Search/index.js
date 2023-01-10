@@ -10,6 +10,7 @@ export default function Search({ navigation }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredUsernames, setFilteredUsernames] = useState([]);
 
+  // dit zorgt er voor dat de username maar 1 malig in de zoekresultaten kan voorkomen
   let allUsernames = [];
   let visitedUsernames = {};
   for (let i = 0; i < getAllimages().length; i++) {

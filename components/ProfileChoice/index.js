@@ -6,8 +6,8 @@ import { getImages } from "../../images";
 export default function ProfileChoice() {
   const images = getImages();
   const imageUrls = [];
-  console.log(images);
 
+  // Alle urls maken voor images uit de database/map waarvan de rij image_favorite 1 is
   for (let i = 0; i < images.length; i++) {
     if (images[i].image_favorite === "1") {
       const url =
@@ -17,6 +17,7 @@ export default function ProfileChoice() {
     }
   }
 
+  //Er voor zorgen dat voor alle images via bovenstaande url een afbeelding wordt weergegeven
   function renderImages() {
     return imageUrls.map((imageUrl) => {
       return (

@@ -5,6 +5,8 @@ import { styles } from "./styles";
 import PositiveButton from "../PositiveButton";
 import NegativeButton from "../NegativeButton";
 
+//Deze pagina is "vast". Was te moeilijk om na te gaan welke gebruiker en aan wie een verzoek heeft gestuurd.
+
 export default function RequestComp() {
   return (
     <View style={styles.container}>
