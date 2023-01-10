@@ -10,7 +10,7 @@ export default function HomeScreen() {
 
   for (let i = 0; i < allimages.length; i++) {
     const url =
-      "http://192.168.1.19/codingproject/assets/posts/" +
+      "https://www.nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/assets/posts/" +
       allimages[i].image_url;
     imageUrls.push(url);
   }
@@ -25,6 +25,16 @@ export default function HomeScreen() {
       return (
         <View key={imageUrl}>
           <View style={{ flexDirection: "row" }}>
+            <View style={styles.profile_picture}>
+              <Image
+                style={styles.profile_image}
+                source={{
+                  uri:
+                    "https://nervous-visvesvaraya.72-47-208-75.plesk.page/codingproject/assets/profileimages/" +
+                    allimages[index].users_profile_image,
+                }}
+              />
+            </View>
             <Text style={styles.left_text}>
               {allimages[index].users_username}
             </Text>

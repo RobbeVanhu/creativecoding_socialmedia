@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  SafeAreaView,
-  SectionList,
-} from "react-native";
+import { Text, View, SafeAreaView, SectionList } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "./styles";
 import { Searchbar } from "react-native-paper";

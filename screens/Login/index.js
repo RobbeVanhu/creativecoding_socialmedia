@@ -17,8 +17,6 @@ function showAlert() {
   );
 }
 
-//code door wim
-
 export default class App extends React.Component {
   state = {
     username: "",

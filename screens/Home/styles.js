@@ -20,8 +20,9 @@ export const styles = StyleSheet.create({
     marginTop: 50,
   },
   left_text: {
-    paddingLeft: 15,
-    width: window.width * 0.67,
+    paddingLeft: 10,
+    paddingTop: 10,
+    width: window.width * 0.6,
     color: COLORS.primarycolor,
     fontWeight: "bold",
     fontSize: 18,
@@ -29,9 +30,19 @@ export const styles = StyleSheet.create({
   },
   right_text: {
     paddingRight: 15,
-    width: window.width * 0.33,
+    paddingTop: 10,
+    width: window.width * 0.25,
     color: COLORS.grey,
     textAlign: "right",
     lineHeight: 20,
+  },
+  profile_picture: {
+    paddingLeft: 15,
+    width: window.width * 0.15,
+  },
+  profile_image: {
+    width: 40,
+    height: 40,
+    borderRadius: 100 / 2,
   },
 });

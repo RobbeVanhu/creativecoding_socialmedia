@@ -26,6 +26,7 @@ export default function ImagePickerExample() {
 
   return (
     <View style={styles.container}>
+      <StatusBar></StatusBar>
       <Button
         style={styles.button}
         title="Post an image from camera roll"
